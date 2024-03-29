@@ -37,6 +37,7 @@ void readingIn() {
         weights.push_back(w);
     }
 }
+
 // normaize the matrix
 vector<vector<double>> normalize(const vector<vector<double>> &matrix) {
     size_t rows = matrix.size();
@@ -145,6 +146,7 @@ long bestAlternative(const vector<double> &closenessCoefficients) {
 
 int main()
 {
+    // reading in matrix and weights
     readingIn();
     /*vector<vector<double>> originMatrix = {
         {9, 7, 1, 2},
