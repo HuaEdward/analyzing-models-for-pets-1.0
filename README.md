@@ -23,3 +23,20 @@ Input to the code as: the specie of the pet (`Cat`, `Dog`, `Rabbit`, `Hamster`, 
 <img width="405" alt="Screenshot 2024-03-30 at 12 03 25 AM" src="https://github.com/HuaEdward/pet-TOPSIS-model/assets/102205131/90ba79f8-fe74-4ab8-86ce-11a73bddea22">
 
 `0.63818 0.0880036 0.642584 0.305568 0.879334 0.26832`
+
+## Weights setting:
+
+The weights of the eight factors for different species are already calculated:
+
+`weightsC = {0.3453, 0.2018, 0.1249, 0.1144, 0.0679, 0.0679, 0.0389, 0.0389};
+    weightsD = {0.2864, 0.1835, 0.1861, 0.1100, 0.0758, 0.0802, 0.0464, 0.0316};
+    weightsH = {0.3395, 0.1432, 0.2034, 0.0830, 0.0552, 0.1107, 0.0382, 0.0267};
+    weightsR = {0.3142, 0.2229, 0.1415, 0.0607, 0.1032, 0.0863, 0.0395, 0.0316};
+    weightsL = {0.2542, 0.2955, 0.1453, 0.1162, 0.0791, 0.0570, 0.0313, 0.0214};`
+
+Cat: <img width="346" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/a16aeb7c-ede5-4600-87fe-2208fcbb8a6b">
+Dog: <img width="354" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/67f4e16b-99cc-4630-aab1-83eedf61949e">
+Hamster: <img width="359" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/7bdeeb0a-3212-436b-be0a-04d86f236df3">
+Rabbit: <img width="378" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/c85ebe2d-8b0f-4313-8a32-b4a728c4d5d9">
+Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/5f5bc84b-5966-4184-856c-645356edc192">
+
