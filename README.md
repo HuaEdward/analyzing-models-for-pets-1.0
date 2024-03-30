@@ -1,6 +1,7 @@
 # pet-TOPSIS-model :cat2: :dog2: :rabbit2: :mouse2: :lizard:
 
-![Twitter](https://img.shields.io/twitter/follow/:hhhisedward? label=Follow) #动态连接twitter账户的图标
+![Twitter](https://img.shields.io/twitter/follow/:hhhisedward? label=Follow)
+
 ![Twitter](https://img.shields.io/twitter/follow/:hhhisedward? style=social)
 
 A TOPSIS model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
