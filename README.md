@@ -35,8 +35,12 @@ The weights of the eight factors for different species are already calculated:
     weightsL = {0.2542, 0.2955, 0.1453, 0.1162, 0.0791, 0.0570, 0.0313, 0.0214};`
 
 Cat: <img width="346" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/a16aeb7c-ede5-4600-87fe-2208fcbb8a6b">
+
 Dog: <img width="354" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/67f4e16b-99cc-4630-aab1-83eedf61949e">
+
 Hamster: <img width="359" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/7bdeeb0a-3212-436b-be0a-04d86f236df3">
+
 Rabbit: <img width="378" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/c85ebe2d-8b0f-4313-8a32-b4a728c4d5d9">
+
 Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/5f5bc84b-5966-4184-856c-645356edc192">
 
