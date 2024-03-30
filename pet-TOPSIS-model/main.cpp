@@ -23,9 +23,9 @@ void readingIn() {
     // weights
     weightsC = {0.3453, 0.2018, 0.1249, 0.1144, 0.0679, 0.0679, 0.0389, 0.0389};
     weightsD = {0.2864, 0.1835, 0.1861, 0.1100, 0.0758, 0.0802, 0.0464, 0.0316};
-    weightsH = {};
-    weightsR = {};
-    weightsL = {};
+    weightsH = {0.3395, 0.1432, 0.2034, 0.0830, 0.0552, 0.1107, 0.0382, 0.0267};
+    weightsR = {0.3142, 0.2229, 0.1415, 0.0607, 0.1032, 0.0863, 0.0395, 0.0316};
+    weightsL = {0.2542, 0.2955, 0.1453, 0.1162, 0.0791, 0.0570, 0.0313, 0.0214};
     
     // reading in specie
     string spec;
@@ -35,19 +35,19 @@ void readingIn() {
         weights = weightsC;
     }
     
-    else if (spec == "Dog") {
+    else if (spec == "DOG") {
         weights = weightsD;
     }
     
-    else if (spec == "Rabbit") {
+    else if (spec == "RABBIT") {
         weights = weightsR;
     }
     
-    else if (spec == "Hamster") {
+    else if (spec == "HAMSTER") {
         weights = weightsH;
     }
     
-    else if (spec == "Lizard") {
+    else if (spec == "LIZARD") {
         weights = weightsL;
     }
     
