@@ -2,7 +2,7 @@
 
 ![Twitter](https://img.shields.io/twitter/follow/hhhisedward? label=Follow)
 
-![Twitter](https://img.shields.io/twitter/follow/hhhisedward? style=social)
+![Twitter](https://img.shields.io/twitter/follow/:user? label=Follow)
 
 A TOPSIS model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
 
