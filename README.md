@@ -24,9 +24,20 @@
 
 * The larger the result value is, the more suitable the family is for this pet.
 
-## Weights setting:
 
-The weights of the eight factors for different species are already calculated:
+# Model 2: Multiple Pets TOPSIS Model (MPTM)
+
+* The only difference is an extra factor => number of cats and dogs ​(if they have had cats or/and dogs)​.
+
+## Sample input:
+
+<img width="962" alt="Screenshot 2024-03-30 at 7 11 14 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/2758e439-93a3-4c50-a134-48ebe1ab7545">
+
+# Weights setting:
+
+* The weights of the eight factors for different species are already calculated:
+
+## PTM
 
 `weightsC = {0.3453, 0.2018, 0.1249, 0.1144, 0.0679, 0.0679, 0.0389, 0.0389};
     weightsD = {0.2864, 0.1835, 0.1861, 0.1100, 0.0758, 0.0802, 0.0464, 0.0316};
@@ -44,10 +55,12 @@ Rabbit: <img width="378" alt="image" src="https://github.com/HuaEdward/pet-TOPSI
 
 Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/5f5bc84b-5966-4184-856c-645356edc192">
 
-# Model 2: Multiple Pets TOPSIS Model (MPTM)
+## MTP
 
-* The only difference is an extra factor => number of cats and dogs ​(if they have had cats or/and dogs)​.
+`weightsC = {0.3044, 0.1806, 0.1084, 0.0941, 0.0564, 0.0564, 0.0332, 0.0332, 0.1333};
+    weightsD = {0.2488, 0.1544, 0.1566, 0.0908, 0.0626, 0.0659, 0.0392, 0.0271, 0.1544};
+    weightsH = {0.3107, 0.1337, 0.1825, 0.0713, 0.0492, 0.0930, 0.0339, 0.0239, 0.1019};
+    weightsR = {0.2787, 0.2053, 0.1310, 0.0510, 0.0852, 0.0708, 0.0337, 0.0276, 0.1168};
+    weightsL = {0.2367, 0.2778, 0.1397, 0.1087, 0.0777, 0.0501, 0.0280, 0.0194, 0.0618};`
 
-## Sample input:
 
-<img width="962" alt="Screenshot 2024-03-30 at 7 11 14 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/2758e439-93a3-4c50-a134-48ebe1ab7545">
