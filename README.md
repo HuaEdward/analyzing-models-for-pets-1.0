@@ -1,7 +1,7 @@
 # Project name: Pet TOPSIS Model (PTM)
 # for :cat2: :dog2: :rabbit2: :mouse2: :lizard:
 
-A TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
+* A TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
 
 ## Sample input:
 
