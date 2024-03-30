@@ -47,3 +47,8 @@ Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSI
 # Model 2: Multiple Pets TOPSIS Model (MPTM)
 
 * Use a second TOPSIS model to input the result from PTM and the number of cats and dogs the owner already has, and output the new result after considering the influence by the other pets.
+
+## Sample input:
+
+<img width="468" alt="Screenshot 2024-03-30 at 5 56 41 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/bcc77d7f-23ee-4c11-b0a3-d188c8080ca7">
+
