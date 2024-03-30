@@ -1,4 +1,4 @@
-# Project name: Pet TOPSIS Model (PTM) (for :cat2: :dog2: :rabbit2: :mouse2: :lizard:)
+# Model 1: Pet TOPSIS Model (PTM) (for :cat2: :dog2: :rabbit2: :mouse2: :lizard:)
 
 * A TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
 
@@ -44,6 +44,6 @@ Rabbit: <img width="378" alt="image" src="https://github.com/HuaEdward/pet-TOPSI
 
 Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/5f5bc84b-5966-4184-856c-645356edc192">
 
-# Multiple Pets TOPSIS Model (MPTM)
+# Model 2: Multiple Pets TOPSIS Model (MPTM)
 
 * Use a second TOPSIS model to input the result from PTM and the number of cats and dogs the owner already has, and output the new result after considering the influence by the other pets.
