@@ -4,7 +4,7 @@ A TOPSIS model for calculating whether multiple households are suitable for keep
 
 ## Project name:
 
-TOPSIS
+Pet TOPSIS Model (PTM)
 
 ## Sample input:
 
