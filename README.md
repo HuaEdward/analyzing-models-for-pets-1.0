@@ -1,4 +1,4 @@
-# pet-TOPSIS-model :cat2: :dog2: :rabbit2: :mouse2: :lizard:
+# pet-TOPSIS-model for :cat2: :dog2: :rabbit2: :mouse2: :lizard:
 
 ## Project name: Pet TOPSIS Model (PTM)
 
