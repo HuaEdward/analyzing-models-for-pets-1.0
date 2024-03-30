@@ -7,7 +7,7 @@
 
 <img width="968" alt="Screenshot 2024-03-29 at 11 52 46 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model/assets/102205131/09d546f6-c84b-4357-ae10-e74093fe6804">
 
-Input to the code as: the specie of the pet (`Cat`, `Dog`, `Rabbit`, `Hamster`, `Lizard`) + number of rows of the table + each number in the table (from column to row)
+* Input to the code as: the specie of the pet (`Cat`, `Dog`, `Rabbit`, `Hamster`, `Lizard`) + number of rows of the table + each number in the table (from column to row)
 
 `Cat 6 1 7 4 7 3 7 78 2 0 1 10 3 7 10 27 1 1 8 7 5 5 4 62 4 0 9 20 3 18 5 32 2 1 10 100 4 22 18 45 0 0 4 50 8 15 9 38 3`
 
