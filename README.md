@@ -52,16 +52,15 @@
 
 # Sample input:
 
-
-`Enter the specie of pets: Cat`
-
-`Enter the number of pets: 1000000`
-
-`Enter the age of the pets: 6`
+```
+Enter the specie of pets: Cat
+Enter the number of pets: 1000000
+Enter the age of the pets: 6
+```
 
 # Sample output:
 
-`
+```
 Year 1: 999711 pets are predicted to survive.
 Year 2: 997483 pets are predicted to survive.
 Year 3: 985603 pets are predicted to survive.
@@ -77,7 +76,7 @@ Year 12: 287 pets are predicted to survive.
 Year 13: 21 pets are predicted to survive.
 Year 14: 0 pets are predicted to survive.
 Year 15: 0 pets are predicted to survive.
-`
+```
 
 # Weights setting:
 
@@ -85,11 +84,13 @@ Year 15: 0 pets are predicted to survive.
 
 ## PTM
 
-`weightsC = {0.3453, 0.2018, 0.1249, 0.1144, 0.0679, 0.0679, 0.0389, 0.0389};
+```
+    weightsC = {0.3453, 0.2018, 0.1249, 0.1144, 0.0679, 0.0679, 0.0389, 0.0389};
     weightsD = {0.2864, 0.1835, 0.1861, 0.1100, 0.0758, 0.0802, 0.0464, 0.0316};
     weightsH = {0.3395, 0.1432, 0.2034, 0.0830, 0.0552, 0.1107, 0.0382, 0.0267};
     weightsR = {0.3142, 0.2229, 0.1415, 0.0607, 0.1032, 0.0863, 0.0395, 0.0316};
-    weightsL = {0.2542, 0.2955, 0.1453, 0.1162, 0.0791, 0.0570, 0.0313, 0.0214};`
+    weightsL = {0.2542, 0.2955, 0.1453, 0.1162, 0.0791, 0.0570, 0.0313, 0.0214};
+```
 
 Cat: <img width="346" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/a16aeb7c-ede5-4600-87fe-2208fcbb8a6b">
 
@@ -103,11 +104,13 @@ Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSI
 
 ## MTP
 
-`weightsC = {0.3044, 0.1806, 0.1084, 0.0941, 0.0564, 0.0564, 0.0332, 0.0332, 0.1333};
+```
+    weightsC = {0.3044, 0.1806, 0.1084, 0.0941, 0.0564, 0.0564, 0.0332, 0.0332, 0.1333};
     weightsD = {0.2488, 0.1544, 0.1566, 0.0908, 0.0626, 0.0659, 0.0392, 0.0271, 0.1544};
     weightsH = {0.3107, 0.1337, 0.1825, 0.0713, 0.0492, 0.0930, 0.0339, 0.0239, 0.1019};
     weightsR = {0.2787, 0.2053, 0.1310, 0.0510, 0.0852, 0.0708, 0.0337, 0.0276, 0.1168};
-    weightsL = {0.2367, 0.2778, 0.1397, 0.1087, 0.0777, 0.0501, 0.0280, 0.0194, 0.0618};`
+    weightsL = {0.2367, 0.2778, 0.1397, 0.1087, 0.0777, 0.0501, 0.0280, 0.0194, 0.0618};
+```
 
 Cat: <img width="611" alt="Screenshot 2024-03-30 at 7 57 51 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/16b17a08-7a0f-441d-8f97-a6c84a8091b2">
 
