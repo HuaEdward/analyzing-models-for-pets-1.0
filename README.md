@@ -33,6 +33,14 @@
 
 <img width="962" alt="Screenshot 2024-03-30 at 7 11 14 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/2758e439-93a3-4c50-a134-48ebe1ab7545">
 
+`Cat 6 1 7 4 7 3 7 78 2 0 0 1 10 3 7 10 27 1 1 1 8 7 5 5 4 62 4 0 0 9 20 3 18 5 32 2 2 1 10 100 4 22 18 45 0 3 0 4 50 8 15 9 38 3 2`
+
+## Sample output:
+
+<img width="330" alt="Screenshot 2024-03-30 at 8 13 42 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/d544969e-ba42-4a79-9ce5-ea6ed8d8b157">
+
+`0.662219 0.206854 0.667652 0.310214 0.720904 0.269207`
+
 # Weights setting:
 
 * The weights of the eight factors for different species are already calculated:
