@@ -63,4 +63,13 @@ Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSI
     weightsR = {0.2787, 0.2053, 0.1310, 0.0510, 0.0852, 0.0708, 0.0337, 0.0276, 0.1168};
     weightsL = {0.2367, 0.2778, 0.1397, 0.1087, 0.0777, 0.0501, 0.0280, 0.0194, 0.0618};`
 
+Cat: <img width="611" alt="Screenshot 2024-03-30 at 7 57 51 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/16b17a08-7a0f-441d-8f97-a6c84a8091b2">
+
+Dog: <img width="464" alt="Screenshot 2024-03-30 at 7 58 31 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/90aacae4-654a-4679-a965-f9a641118a6e">
+
+Hamster: <img width="487" alt="Screenshot 2024-03-30 at 7 59 01 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/7f03af81-bd50-4f1f-83b4-00b6948835dc">
+
+Rabbit: <img width="439" alt="Screenshot 2024-03-30 at 7 59 22 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/1c681d80-73a3-4418-b8e7-6af3b0d9fa6c">
+
+Lizard: <img width="441" alt="Screenshot 2024-03-30 at 8 00 02 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/61745691-a1a2-4bea-bd91-a8d00ed16ece">
 
