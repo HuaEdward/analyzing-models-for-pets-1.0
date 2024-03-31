@@ -5,7 +5,7 @@
 - Model 3: Pets' future living trend predicting
 - Weight settings
 
-## Model 1: Pet TOPSIS Model (PTM) (for :cat2: :dog2: :rabbit2: :mouse2: :lizard:)
+## Model 1: Pet TOPSIS Model (PTM)
 
 * A TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
 
