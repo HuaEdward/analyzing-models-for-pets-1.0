@@ -44,9 +44,42 @@
 
 `0.662219 0.206854 0.667652 0.310214 0.720904 0.269207`
 
+# Model 3: Future trend predicting (for :cat2: :dog2: :rabbit2: :lizard:)
+
+* Using a Gaussian distribution model and adjust the standard deviation for known mortality rates to obtain the predicted number of pets per year in the future.​
+* Factors such as the species' lifetime are already set in the code.
+* The average lifetime of hamsters🐁(1.75) is too short to be culculated in this model.
+
+# Sample input:
+
+`
+Enter the specie of pets: Cat
+Enter the number of pets: 1000000
+Enter the age of the pets: 6
+`
+# Sample output:
+
+`
+Year 1: 999711 pets are predicted to survive.
+Year 2: 997483 pets are predicted to survive.
+Year 3: 985603 pets are predicted to survive.
+Year 4: 941050 pets are predicted to survive.
+Year 5: 825527 pets are predicted to survive.
+Year 6: 621802 pets are predicted to survive.
+Year 7: 376317 pets are predicted to survive.
+Year 8: 173729 pets are predicted to survive.
+Year 9: 58856 pets are predicted to survive.
+Year 10: 14252 pets are predicted to survive.
+Year 11: 2437 pets are predicted to survive.
+Year 12: 287 pets are predicted to survive.
+Year 13: 21 pets are predicted to survive.
+Year 14: 0 pets are predicted to survive.
+Year 15: 0 pets are predicted to survive.
+`
+
 # Weights setting:
 
-* The weights of the eight factors for different species are already calculated:
+* The weights of the eight factors for different species are already calculated.
 
 ## PTM
 
@@ -83,4 +116,3 @@ Hamster: <img width="487" alt="Screenshot 2024-03-30 at 7 59 01 PM" src="https:/
 Rabbit: <img width="439" alt="Screenshot 2024-03-30 at 7 59 22 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/1c681d80-73a3-4418-b8e7-6af3b0d9fa6c">
 
 Lizard: <img width="441" alt="Screenshot 2024-03-30 at 8 00 02 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/61745691-a1a2-4bea-bd91-a8d00ed16ece">
-
