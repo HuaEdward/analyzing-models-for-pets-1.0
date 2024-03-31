@@ -1,6 +1,6 @@
 # Analyzing models for pets :cat2: :dog2: :rabbit2: :mouse2: :lizard: 🦮 🐕‍🦺
 
-- [Model 1: Pet TOPSIS Model (PTM)]
+- [Model 1: Pet TOPSIS Model (PTM)] (##Model 1: Pet TOPSIS Model (PTM) (for :cat2: :dog2: :rabbit2: :mouse2: :lizard:)
 - [Model 2: Multiple Pets TOPSIS Model (MPTM)]
 - [Model 3: Future trend predicting]
 - [Weight settings]
