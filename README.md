@@ -1,5 +1,9 @@
 # Analyzing models for pets :cat2: :dog2: :rabbit2: :mouse2: :lizard: 🦮 🐕‍🦺
 
+- Model 1: Pet TOPSIS Model (PTM)
+- Model 2: Multiple Pets TOPSIS Model (MPTM)
+- Model 3: Future trend predicting
+
 # Model 1: Pet TOPSIS Model (PTM) (for :cat2: :dog2: :rabbit2: :mouse2: :lizard:)
 
 * A TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
