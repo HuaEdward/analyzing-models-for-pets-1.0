@@ -2,6 +2,9 @@
 
 * A TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) model for calculating whether multiple households are suitable for keeping different pets. Whether these family are suitable for keeping pets is calculated as a number for 0 to 1.
 
+<img width="485" alt="Screenshot 2024-03-30 at 8 28 31 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/dcc5f85e-999f-4616-9f0e-90cd7bc6a6b9">
+
+
 ## Sample input: 8 factors of certain amount of families to compare.
 
 <img width="968" alt="Screenshot 2024-03-29 at 11 52 46 PM" src="https://github.com/HuaEdward/pet-TOPSIS-model/assets/102205131/09d546f6-c84b-4357-ae10-e74093fe6804">
