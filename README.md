@@ -52,11 +52,11 @@
 
 # Sample input:
 
-`
-Enter the specie of pets: Cat
-Enter the number of pets: 1000000
-Enter the age of the pets: 6
-`
+
+‘Enter the specie of pets: Cat’
+’Enter the number of pets: 1000000‘
+‘Enter the age of the pets: 6’
+
 # Sample output:
 
 `
