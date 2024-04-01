@@ -65,7 +65,7 @@ Cat 6 1 7 4 7 3 7 78 2 0 0 1 10 3 7 10 27 1 1 1 8 7 5 5 4 62 4 0 0 9 20 3 18 5 3
 
 * Using a Gaussian distribution model and adjust the standard deviation for known mortality rates to obtain the predicted number of pets per year in the future.​
 * Factors such as the species' lifetime are already set in the code.
-* The average lifetime of hamsters🐁(1.75) is too short to be culculated in this model.
+* The average lifetime of hamsters🐁(21 months) is too short to be culculated in this model.
 
 ## Sample input:
 
