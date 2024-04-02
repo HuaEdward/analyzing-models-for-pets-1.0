@@ -119,7 +119,7 @@ Rabbit: <img width="378" alt="image" src="https://github.com/HuaEdward/pet-TOPSI
 
 Lizard: <img width="369" alt="image" src="https://github.com/HuaEdward/pet-TOPSIS-model-1.0/assets/102205131/5f5bc84b-5966-4184-856c-645356edc192">
 
-### MTP
+### MPTM
 
 ```
     weightsC = {0.3044, 0.1806, 0.1084, 0.0941, 0.0564, 0.0564, 0.0332, 0.0332, 0.1333};
