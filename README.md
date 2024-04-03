@@ -61,7 +61,7 @@ Cat 6 1 7 4 7 3 7 78 2 0 0 1 10 3 7 10 27 1 1 1 8 7 5 5 4 62 4 0 0 9 20 3 18 5 3
 0.662219 0.206854 0.667652 0.310214 0.720904 0.269207
 ```
 
-## Model 3: Pets' future living trend predicting (for :cat2: :dog2: :rabbit2: :lizard:) 🐾
+## Model 3: Pets' future retention trend predicting (for :cat2: :dog2: :rabbit2: :lizard:) 🐾
 
 * Using a Gaussian distribution model and adjust the standard deviation for known mortality rates to obtain the predicted number of pets per year in the future.​
 * Factors such as the species' lifetime are already set in the code.
