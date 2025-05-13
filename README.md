@@ -1,4 +1,4 @@
-# Analyzing models for pets :cat2: :dog2: :rabbit2: :mouse2: :lizard: 🦮 🐕‍🦺
+# Analyzing models for pets :cat2: :dog2: :rabbit2: :mouse2: :lizard: 🦮 🐕‍🦺 (OPEN THE HTML FILE TO USE IT)
 
 - Model 1: Pet TOPSIS Model (PTM)
 - Model 2: Multiple Pets TOPSIS Model (MPTM)
