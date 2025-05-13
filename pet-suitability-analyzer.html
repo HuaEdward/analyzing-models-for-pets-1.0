@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Suitability Analyzer</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-dark: #2980b9;
+            --secondary: #f0f5f9;
+            --text: #2c3e50;
+            --danger: #e74c3c;
+            --success: #2ecc71;
+            --neutral: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            color: var(--primary-dark);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            overflow: visible;
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+            top: 0;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--secondary);
+        }
+
+        tr:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .input-row {
+            background-color: #f8f9fa;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .delete-btn {
+            background-color: var(--danger);
+            margin-left: 5px;
+        }
+
+        .result-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--secondary);
+            border-radius: 6px;
+        }
+
+        .result-table {
+            margin-top: 20px;
+        }
+
+        .result-table th {
+            background-color: var(--primary-dark);
+        }
+
+        .pet-selector {
+            margin-bottom: 20px;
+        }
+
+        .pet-selector select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .info-icon {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 18px;
+            font-size: 12px;
+            cursor: help;
+            margin-left: 5px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .score-high {
+            background-color: rgba(46, 204, 113, 0.2);
+            font-weight: bold;
+        }
+
+        .score-medium {
+            background-color: rgba(241, 196, 15, 0.2);
+        }
+
+        .score-low {
+            background-color: rgba(231, 76, 60, 0.2);
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .pet-icon {
+            font-size: 24px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🐾 Pet Suitability Analyzer</h1>
+        <p>This tool uses TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) to calculate the
+            suitability of different households for pet ownership.</p>
+
+        <div class="section">
+            <div class="pet-selector">
+                <h2>Step 1: Select Pet Type</h2>
+                <select id="petType">
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Hamster">Hamster</option>
+                    <option value="Lizard">Lizard</option>
+                </select>
+                <button id="applyPetType">Apply Pet Type</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Step 2: Enter Household Information</h2>
+            <div class="actions">
+                <button id="addRow">Add New Household</button>
+                <button id="calculateScores">Calculate Suitability Scores</button>
+            </div>
+
+            <div style="overflow: visible;">
+                <table id="householdTable">
+                    <thead>
+                        <tr>
+                            <th>Household</th>
+                            <th>
+                                Allergy
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">1: do not have allergy, 0: have allergy</span>
+                                </div>
+                            </th>
+                            <th>
+                                Family Consent
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">Scale of 1-10</span>
+                                </div>
+                            </th>
+                            <th>
+                                Financial Situation
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">In $10,000/year</span>
+                                </div>
+                            </th>
+                            <th>
+                                Healthcare
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">Number of pet hospitals within 3km</span>
+                                </div>
+                            </th>
+                            <th>
+                                Living Space
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">In 10m²</span>
+                                </div>
+                            </th>
+                            <th>
+                                Entertainment
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">Number of toys</span>
+                                </div>
+                            </th>
+                            <th>
+                                Age
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">Age of primary caretaker</span>
+                                </div>
+                            </th>
+                            <th>
+                                Children
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">Number of children in household</span>
+                                </div>
+                            </th>
+                            <th>
+                                Cats/Dogs
+                                <div class="tooltip">
+                                    <span class="info-icon">i</span>
+                                    <span class="tooltiptext">Number of cats or dogs already in household</span>
+                                </div>
+                            </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="result-section" id="resultSection" style="display: none;">
+            <h2>Results: Pet Suitability Scores</h2>
+            <p>Current pet type: <span id="currentPetType">Cat</span></p>
+            <p>The scores below indicate the suitability of each household for keeping the selected pet type (higher is
+                better):</p>
+
+            <table class="result-table" id="resultTable">
+                <thead>
+                    <tr>
+                        <th>Household</th>
+                        <th>Suitability Score</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Results will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Sample weights for each pet type (from the C++ code)
+        const weights = {
+            Cat: [0.3044, 0.1806, 0.1084, 0.0941, 0.0564, 0.0564, 0.0332, 0.0332, 0.1333],
+            Dog: [0.2488, 0.1544, 0.1566, 0.0908, 0.0626, 0.0659, 0.0392, 0.0271, 0.1544],
+            Hamster: [0.3107, 0.1337, 0.1825, 0.0713, 0.0492, 0.0930, 0.0339, 0.0239, 0.1019],
+            Rabbit: [0.2787, 0.2053, 0.1310, 0.0510, 0.0852, 0.0708, 0.0337, 0.0276, 0.1168],
+            Lizard: [0.2367, 0.2778, 0.1397, 0.1087, 0.0777, 0.0501, 0.0280, 0.0194, 0.0618]
+        };
+
+        // Best ranges for age and number of children
+        const minBestAge = 28;
+        const maxBestAge = 59;
+        const minBestNumOfC = 0;
+        const maxBestNumOfC = 2;
+
+        let householdCount = 0;
+        let currentPetType = "Cat";
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add initial households based on the example table
+            addHousehold('A', [1, 7, 4, 7, 3, 7, 78, 2, 0]);
+            addHousehold('B', [0, 1, 10, 3, 7, 10, 27, 1, 1]);
+            addHousehold('C', [1, 8, 7, 5, 5, 4, 62, 4, 0]);
+            addHousehold('D', [0, 9, 20, 3, 18, 5, 32, 2, 2]);
+            addHousehold('E', [1, 10, 100, 4, 22, 18, 45, 0, 3]);
+            addHousehold('F', [0, 4, 50, 8, 15, 9, 38, 3, 2]);
+
+            // Add event listeners
+            document.getElementById('addRow').addEventListener('click', function () {
+                addEmptyHousehold();
+            });
+
+            document.getElementById('calculateScores').addEventListener('click', function () {
+                calculateTOPSIS();
+            });
+
+            document.getElementById('applyPetType').addEventListener('click', function () {
+                currentPetType = document.getElementById('petType').value;
+                document.getElementById('currentPetType').textContent = currentPetType;
+                // Recalculate if results are already shown
+                if (document.getElementById('resultSection').style.display !== 'none') {
+                    calculateTOPSIS();
+                }
+            });
+        });
+
+        function addEmptyHousehold() {
+            householdCount++;
+            const letter = String.fromCharCode(65 + householdCount % 26);
+            const id = householdCount >= 26 ? `${letter}${Math.floor(householdCount / 26)}` : letter;
+            addHousehold(id, [0, 5, 0, 0, 0, 0, 30, 0, 0], true);
+        }
+
+        function addHousehold(id, values, isInputRow = false) {
+            const tbody = document.querySelector('#householdTable tbody');
+            const row = document.createElement('tr');
+
+            if (isInputRow) {
+                row.className = 'input-row';
+            }
+
+            row.innerHTML = `
+                <td>${id}</td>
+                ${isInputRow
+                    ? Array(9).fill().map((_, i) =>
+                        `<td><input type="number" value="${values[i]}" min="${i === 0 ? 0 : 0}" max="${i === 0 ? 1 : (i === 1 ? 10 : '')}" step="${i === 0 ? 1 : 1}"></td>`
+                    ).join('')
+                    : values.map(v => `<td>${v}</td>`).join('')}
+                <td>
+                    ${isInputRow
+                    ? `<button class="delete-btn" onclick="deleteRow(this)">Delete</button>`
+                    : `<button onclick="editRow(this)">Edit</button>`}
+                </td>
+            `;
+
+            tbody.appendChild(row);
+        }
+
+        function editRow(button) {
+            const row = button.closest('tr');
+            const cells = row.cells;
+            const values = [];
+
+            // Collect current values
+            for (let i = 1; i < cells.length - 1; i++) {
+                values.push(cells[i].textContent);
+            }
+
+            // Replace with inputs
+            for (let i = 1; i < cells.length - 1; i++) {
+                const min = i === 1 ? 0 : 0; // Allergy is 0 or 1
+                const max = i === 1 ? 1 : (i === 2 ? 10 : ''); // Family consent is 1-10
+                cells[i].innerHTML = `<input type="number" value="${values[i - 1]}" min="${min}" max="${max}" step="1">`;
+            }
+
+            // Change the button to Save
+            cells[cells.length - 1].innerHTML = `
+                <button onclick="saveRow(this)">Save</button>
+                <button class="delete-btn" onclick="deleteRow(this)">Delete</button>
+            `;
+
+            row.className = 'input-row';
+        }
+
+        function saveRow(button) {
+            const row = button.closest('tr');
+            const cells = row.cells;
+            const inputs = row.querySelectorAll('input');
+
+            // Update cells with input values
+            for (let i = 0; i < inputs.length; i++) {
+                cells[i + 1].textContent = inputs[i].value;
+            }
+
+            // Change the button back to Edit
+            cells[cells.length - 1].innerHTML = `<button onclick="editRow(this)">Edit</button>`;
+
+            row.className = '';
+        }
+
+        function deleteRow(button) {
+            const row = button.closest('tr');
+            row.remove();
+        }
+
+        function calculateTOPSIS() {
+            const rows = document.querySelectorAll('#householdTable tbody tr');
+            if (rows.length === 0) {
+                alert('Please add at least one household.');
+                return;
+            }
+
+            // Process all rows, converting any input rows to normal rows
+            rows.forEach(row => {
+                if (row.classList.contains('input-row')) {
+                    const saveBtn = row.querySelector('button');
+                    if (saveBtn) saveRow(saveBtn);
+                }
+            });
+
+            // Create decision matrix
+            const matrix = [];
+            const households = [];
+
+            rows.forEach(row => {
+                const values = [];
+                households.push(row.cells[0].textContent);
+
+                for (let i = 1; i < 10; i++) {
+                    values.push(parseFloat(row.cells[i].textContent));
+                }
+
+                matrix.push(values);
+            });
+
+            // Perform TOPSIS calculations
+            const forwardedMatrix = forwardize(matrix);
+            const normalizedMatrix = normalize(forwardedMatrix);
+            const weightedMatrix = multiplyWeights(normalizedMatrix, weights[currentPetType]);
+            const posIdeal = idealSolution(weightedMatrix);
+            const negIdeal = negIdealSolution(weightedMatrix);
+            const distToIdeal = distance(weightedMatrix, posIdeal);
+            const distToNegIdeal = distance(weightedMatrix, negIdeal);
+            const scores = closenessCoefficients(distToIdeal, distToNegIdeal);
+
+            // Display results
+            displayResults(households, scores);
+        }
+
+        function forwardize(matrix) {
+            const forwardedMatrix = JSON.parse(JSON.stringify(matrix)); // Deep copy
+
+            for (let i = 0; i < matrix.length; i++) {
+                // Handle Age (index 6)
+                const age = matrix[i][6];
+                if (age < minBestAge) {
+                    forwardedMatrix[i][6] = 1 - (minBestAge - age) / (minBestAge - 1);
+                } else if (age >= minBestAge && age <= maxBestAge) {
+                    forwardedMatrix[i][6] = 1;
+                } else if (age > maxBestAge) {
+                    forwardedMatrix[i][6] = 1 - (age - maxBestAge) / (100 - maxBestAge);
+                }
+
+                // Handle Number of Children (index 7)
+                const numChildren = matrix[i][7];
+                if (numChildren < minBestNumOfC) {
+                    forwardedMatrix[i][7] = 1 - (minBestNumOfC - numChildren) / (minBestNumOfC - 0);
+                } else if (numChildren >= minBestNumOfC && numChildren <= maxBestNumOfC) {
+                    forwardedMatrix[i][7] = 1;
+                } else if (numChildren > maxBestNumOfC) {
+                    forwardedMatrix[i][7] = 1 - (numChildren - maxBestNumOfC) / (5 - maxBestNumOfC);
+                }
+
+                // Handle Cats/Dogs (index 8) - cost criterion
+                // Find max value in this column
+                let maxCatsDogs = 0;
+                for (let j = 0; j < matrix.length; j++) {
+                    maxCatsDogs = Math.max(maxCatsDogs, matrix[j][8]);
+                }
+                forwardedMatrix[i][8] = maxCatsDogs - matrix[i][8];
+            }
+
+            return forwardedMatrix;
+        }
+
+        function normalize(matrix) {
+            const rows = matrix.length;
+            const cols = matrix[0].length;
+            const normalizedMatrix = Array(rows).fill().map(() => Array(cols).fill(0));
+
+            for (let j = 0; j < cols; j++) {
+                let sum = 0;
+                for (let i = 0; i < rows; i++) {
+                    sum += matrix[i][j] * matrix[i][j];
+                }
+                const norm = Math.sqrt(sum);
+
+                for (let i = 0; i < rows; i++) {
+                    normalizedMatrix[i][j] = matrix[i][j] / norm;
+                }
+            }
+
+            return normalizedMatrix;
+        }
+
+        function multiplyWeights(matrix, weights) {
+            const rows = matrix.length;
+            const cols = matrix[0].length;
+            const weightedMatrix = Array(rows).fill().map(() => Array(cols).fill(0));
+
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    weightedMatrix[i][j] = matrix[i][j] * weights[j];
+                }
+            }
+
+            return weightedMatrix;
+        }
+
+        function idealSolution(matrix) {
+            const cols = matrix[0].length;
+            const ideal = Array(cols).fill(Number.NEGATIVE_INFINITY);
+
+            for (let j = 0; j < cols; j++) {
+                for (let i = 0; i < matrix.length; i++) {
+                    ideal[j] = Math.max(ideal[j], matrix[i][j]);
+                }
+            }
+
+            return ideal;
+        }
+
+        function negIdealSolution(matrix) {
+            const cols = matrix[0].length;
+            const negIdeal = Array(cols).fill(Number.POSITIVE_INFINITY);
+
+            for (let j = 0; j < cols; j++) {
+                for (let i = 0; i < matrix.length; i++) {
+                    negIdeal[j] = Math.min(negIdeal[j], matrix[i][j]);
+                }
+            }
+
+            return negIdeal;
+        }
+
+        function distance(matrix, target) {
+            const rows = matrix.length;
+            const distances = Array(rows).fill(0);
+
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < target.length; j++) {
+                    distances[i] += Math.pow(matrix[i][j] - target[j], 2);
+                }
+                distances[i] = Math.sqrt(distances[i]);
+            }
+
+            return distances;
+        }
+
+        function closenessCoefficients(distIdeal, distNegIdeal) {
+            const size = distIdeal.length;
+            const coefficients = Array(size).fill(0);
+
+            for (let i = 0; i < size; i++) {
+                coefficients[i] = distNegIdeal[i] / (distIdeal[i] + distNegIdeal[i]);
+            }
+
+            return coefficients;
+        }
+
+        function displayResults(households, scores) {
+            const resultSection = document.getElementById('resultSection');
+            const resultTable = document.getElementById('resultTable').querySelector('tbody');
+
+            // Clear previous results
+            resultTable.innerHTML = '';
+
+            // Sort households by score
+            const sortedData = scores.map((score, index) => ({
+                household: households[index],
+                score: score
+            })).sort((a, b) => b.score - a.score);
+
+            // Add rows to result table
+            sortedData.forEach(data => {
+                const row = document.createElement('tr');
+                const scoreClass = data.score >= 0.7 ? 'score-high' : (data.score >= 0.5 ? 'score-medium' : 'score-low');
+
+                let recommendation = '';
+                let petIcon = '';
+
+                if (data.score >= 0.7) {
+                    recommendation = 'Highly Suitable! Great match for a ' + currentPetType.toLowerCase() + '.';
+                    switch (currentPetType) {
+                        case 'Cat': petIcon = '🐱'; break;
+                        case 'Dog': petIcon = '🐶'; break;
+                        case 'Rabbit': petIcon = '🐰'; break;
+                        case 'Hamster': petIcon = '🐹'; break;
+                        case 'Lizard': petIcon = '🦎'; break;
+                    }
+                } else if (data.score >= 0.5) {
+                    recommendation = 'Moderately Suitable. Consider some improvements.';
+                } else {
+                    recommendation = 'Not Recommended. Significant improvements needed.';
+                }
+
+                row.innerHTML = `
+                    <td>${data.household}</td>
+                    <td class="${scoreClass}">${data.score.toFixed(4)}</td>
+                    <td>${petIcon} ${recommendation}</td>
+                `;
+
+                resultTable.appendChild(row);
+            });
+
+            // Show result section
+            resultSection.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
